@@ -1,0 +1,378 @@
+/* ==========================================================================
+   L'ÉLIXIR | LUXURY FOOD ORDERING SYSTEM
+   Design System & Global Stylesheet
+   ========================================================================== */
+
+:root {
+  /* Primary Luxury Palette */
+  --color-midnight: #151515;
+  --color-charcoal: #242424;
+  --color-champagne-gold: #C6A66B;
+  --color-champagne-gold-hover: #b59458;
+  --color-champagne-gold-light: rgba(198, 166, 107, 0.12);
+  --color-champagne-gold-border: rgba(198, 166, 107, 0.35);
+  --color-warm-ivory: #F5EFE5;
+  --color-warm-ivory-darker: #eae2d4;
+  --color-white: #FFFFFF;
+  --color-dark-text: #292929;
+  --color-muted-grey: #888888;
+  --color-border-subtle: #E6DED2;
+  --color-danger: #a93226;
+  --color-danger-light: #fdedec;
+  --color-success: #2e7d32;
+  --color-success-light: #edf7ed;
+
+  /* Typography */
+  --font-serif: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  --font-serif-display: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Elevation & Shadows */
+  --shadow-subtle: 0 4px 20px rgba(21, 21, 21, 0.04);
+  --shadow-card: 0 10px 30px rgba(21, 21, 21, 0.06);
+  --shadow-hover: 0 16px 40px rgba(21, 21, 21, 0.12);
+  --shadow-dropdown: 0 20px 45px rgba(21, 21, 21, 0.15);
+
+  /* Border Radii (Moderate rounded corners) */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base Resets */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-warm-ivory);
+  color: var(--color-dark-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* Typography Defaults */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  color: var(--color-charcoal);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: 2.75rem; }
+h2 { font-size: 2.25rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.35rem; }
+h5 { font-size: 1.15rem; }
+
+p {
+  color: var(--color-dark-text);
+  font-size: 0.95rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: all var(--transition-fast);
+}
+
+/* Layout Container */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.container-narrow {
+  width: 100%;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Common Section Layout */
+.section {
+  padding: 80px 0;
+}
+
+.section-dark {
+  background-color: var(--color-midnight);
+  color: var(--color-white);
+}
+
+.section-dark h1,
+.section-dark h2,
+.section-dark h3,
+.section-dark h4 {
+  color: var(--color-white);
+}
+
+.section-dark p {
+  color: #c0c0c0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.section-badge {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-champagne-gold);
+  font-weight: 600;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.section-title {
+  margin-bottom: 14px;
+  font-size: 2.4rem;
+}
+
+.section-subtitle {
+  color: var(--color-muted-grey);
+  max-width: 620px;
+  margin: 0 auto;
+  font-size: 1rem;
+}
+
+/* Luxury Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 28px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-normal);
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: var(--color-midnight);
+  color: var(--color-white);
+  border: 1px solid var(--color-midnight);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-champagne-gold);
+  border-color: var(--color-champagne-gold);
+  color: var(--color-midnight);
+  box-shadow: 0 6px 20px rgba(198, 166, 107, 0.28);
+}
+
+.btn-gold {
+  background-color: var(--color-champagne-gold);
+  color: var(--color-midnight);
+  border: 1px solid var(--color-champagne-gold);
+}
+
+.btn-gold:hover {
+  background-color: var(--color-champagne-gold-hover);
+  border-color: var(--color-champagne-gold-hover);
+  color: var(--color-white);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-charcoal);
+  border: 1px solid var(--color-charcoal);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-charcoal);
+  color: var(--color-white);
+}
+
+.btn-outline-gold {
+  background-color: transparent;
+  color: var(--color-champagne-gold);
+  border: 1px solid var(--color-champagne-gold);
+}
+
+.btn-outline-gold:hover {
+  background-color: var(--color-champagne-gold);
+  color: var(--color-midnight);
+}
+
+.btn-sm {
+  padding: 8px 16px;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+}
+
+.btn-lg {
+  padding: 16px 36px;
+  font-size: 0.95rem;
+}
+
+/* Dietary Indicators */
+.diet-indicator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 3px;
+  border: 1.5px solid;
+}
+
+.diet-indicator.veg {
+  border-color: #27ae60;
+}
+
+.diet-indicator.veg .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #27ae60;
+}
+
+.diet-indicator.non-veg {
+  border-color: #c0392b;
+}
+
+.diet-indicator.non-veg .dot {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 9px solid #c0392b;
+}
+
+/* Luxury Card Base */
+.luxe-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-subtle);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  transition: all var(--transition-normal);
+}
+
+.luxe-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--color-champagne-gold-border);
+}
+
+/* Price Highlight */
+.price-tag {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  color: var(--color-champagne-gold);
+  font-size: 1.25rem;
+  letter-spacing: 0.02em;
+}
+
+/* Badges */
+.badge-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background-color: var(--color-champagne-gold);
+  color: var(--color-midnight);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.badge-outline {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 8px;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-sm);
+  font-size: 0.72rem;
+  color: var(--color-muted-grey);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-warm-ivory);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d4c8b8;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-champagne-gold);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  h1 { font-size: 2.1rem; }
+  h2 { font-size: 1.8rem; }
+  h3 { font-size: 1.45rem; }
+  .section { padding: 50px 0; }
+  .section-title { font-size: 1.9rem; }
+}
